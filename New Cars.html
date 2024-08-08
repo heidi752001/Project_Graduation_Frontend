@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Motors</title>
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/fontawesome.min.css">
+    <link href="bootstrap-5.3.0-dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+    <!-- الهيدر -->
+   <nav class="navbar navbar-expand-lg bg-black text-white sticky-top">
+    <div class="container-fluid">
+      <!-- اللوجو -->
+      <img src="images/logo.jpg" width="50px" style="margin-top: -8px; margin-left: 20px;">
+      <a class="navbar-brand" href="#" style="padding-right: 20px; font-size: 30px; margin-left: 10px; margin-top: 15px; margin-bottom: 20px; color: white !important; text-shadow: 2px 2px 9px orange; font-weight: bold;">SMART MOTORS</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- اللينكات اللي فالهيدر -->
+      <ul class="navbar-nav mx-auto mb-2 mt-1 mb-lg-0" style="margin-left: 60px !important;">
+        <li class="nav-item mt-24 mb-10 ms-200">
+          <a class="nav-link active text-light" style="color: white; text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" aria-current="page" href="Smart Motors.html">Home</a>
+        </li>
+        <li class="nav-item dropdown mt-6 mb-10 ms-20">
+          <a class="nav-link dropdown-toggle text-white" style="text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" href="Cars.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cars</a>
+          <ul class="dropdown-menu" style="background-color: white;" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item text-black" style="font-size: 25px; text-shadow: 2px 2px 2px rgb(167, 167, 167);" href="New Cars.html">New</a></li>
+            <li><a class="dropdown-item text-black" style="font-size: 25px; text-shadow: 2px 2px 2px rgb(167, 167, 167);" href="Used Cars.html">Used</a></li>
+          </ul>
+        </li>
+        <li class="nav-item mt-6 mb-10 ms-20">
+          <a class="nav-link text-light" style="color: white; text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" href="Services.html">Services</a>
+        </li>
+          <li class="nav-item mt-6 mb-10 ms-20">
+            <a class="nav-link text-light" style="color: white; text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" href="Contact.html">Contact</a>
+          </li>
+          <li class="nav-item mt-6 me-20 mb-13">
+            <a class="nav-link text-light" style="color: white; text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" href="About.html">About</a>
+          </li>
+      </ul>
+        <!-- السيرش -->
+        <form class="d-flex" style=" margin-right: 30px;">
+          <input class="form-control me-300 my-0" type="search" placeholder="Search" aria-label="Search">
+          <button class="bg-black text-white">
+            <i class="fas fa-search mt-1 mx-2" type="submit" style="font-size: 30px;"></i>
+          </button>
+          <button class="btn btn-outline-light ms-4" style="font-size: 20px; font-weight: bold;" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login</button>
+        </form>
+      </div>
+      </div>
+    </nav>
+    <div class="container-fluid p-0">
+        <!-- الشات بوت -->
+    <div id="test" style="position: fixed; top: 5rem; right: 3rem; display: none;">
+        <div class="child" id="chatbot">
+            <div class="header">
+                <div class="h-child">
+                    <img src="images/chatbot.jpg" alt="avatar" id="avatar">
+                    <div>
+                        <span class="name" style="font-size: 20px;">Chat Bot</span>
+                        <br>
+                        <span style="color: rgb(11, 11, 66); font-size: 17px;font-weight: 500;">online</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="refBtn"><i class="fa fa-refresh" onclick="initChat()"></i></button>
+                    <i class="fas fa-times" id="class_x"></i>
+                </div>
+            </div>
+            <div id="chat-box"></div>
+            <div class="footer">
+                <span>Powered By @ Smart Motors</span>
+            </div>
+        </div>
+      </div>
+      <div class="parent">
+        <div class="desc">
+          <button id="init" class="nav-link text-light">
+            <img class="image" src="images/chat.jpg" alt="pic" width="60px">
+          </button>
+        </div>
+      </div>
+      <!-- سكشن للعربيات -->
+      <div class="container-fluid" id="cars">
+        <div class="row justify-content-around pb-5 " style="background-color: #000016;">
+          <!-- العنوان -->
+          <h1 class="text-center text-light p-3 m-0 mt-4" style="font-size: 50px;">Our Cars</h1>
+          <!-- كارت لكل عربية بتفاصيلها ولما اضغط شراء يظهر فورم التسجيل -->
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="KIA.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">
+              <img src="images/KIA Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;">
+            </a>
+            <div class="card-body">
+              <a href="KIA.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">KIA Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Mercedes.html">
+             <img src="images/Mercedes Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;">
+            </a>
+            <div class="card-body">
+              <a href="Mercedes.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Mercedes</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Chevrolet.html">
+              <img src="images/Chevrolet Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 30%; width: 180px;"></a>
+            <div class="card-body">
+              <a href="Chevrolet.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Chevrolet</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Nissan.html">
+            <img src="images/Nissan Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 120px;"></a>
+            <div class="card-body">
+              <a href="Nissan.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Nissan</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Peugeot.html">
+            <img src="images/Peugeot Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 120px;"></a>
+            <div class="card-body">
+              <a href="Peugeot.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Peugeot</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Skoda.html">
+            <img src="images/Skoda Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Skoda.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Skoda Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Audi.html">
+            <img src="images/Audi Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 20%; width: 180px;"></a>
+            <div class="card-body">
+              <a href="Audi.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Audi Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="BMW.html">
+            <img src="images/BMW Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="BMW.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">BMW Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Lamborghini.html">
+            <img src="images/Lamborghini Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Lamborghini.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Lamborghini</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Fiat.html">
+            <img src="images/Fiat Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Fiat.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Fiat Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Jeep.html">
+            <img src="images/Jeep Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 20%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Jeep.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Jeep Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Land Rover.html">
+            <img src="images/Land Rover Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Land Rover.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Land Rover</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Maserati.html">
+            <img src="images/Maserati Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Maserati.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Maserati</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Subaru.html">
+            <img src="images/Subaru Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Subaru.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Subaru Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Dodge.html">
+            <img src="images/Dodge Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Dodge.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Dodge Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Alfa Romeo.html">
+            <img src="images/Alfa Romeo Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Alfa Romeo.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Alfa Romeo</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Suzuki.html">
+            <img src="images/Suzuki Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Suzuki.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Suzuki Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Ferari.html">
+            <img src="images/Ferari Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 20%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Ferari.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Ferari Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Geely.html">
+            <img src="images/Geely Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 20%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Geely.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Geely Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Volex.html">
+            <img src="images/Volex Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Volex.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Volex Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="BYD.html">
+            <img src="images/BYD Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="BYD.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">BYD Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Honda.html">
+            <img src="images/Honda Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Honda.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Honda</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="MG.html">
+            <img src="images/MG Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="MG.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">MG Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Reno.html">
+            <img src="images/Reno Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Reno.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Reno Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Toyota.html">
+            <img src="images/Toyota Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Toyota.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Toyota Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Seat.html">
+            <img src="images/Seat Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Seat.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Seat Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Chery Tiggo.html">
+            <img src="images/Chery Tiggo Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Chery Tiggo.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Chery Tiggo</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Volvo.html">
+            <img src="images/Volvo Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Volvo.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Volvo Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Lotus.html">
+            <img src="images/Lotus Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Lotus.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Lotus Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Aston Martin.html">
+            <img src="images/Aston Martin Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 180px;"></a>
+            <div class="card-body">
+              <a href="Aston Martin.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Aston Martin</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Bentley.html">
+            <img src="images/Bentley Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 180px;"></a>
+            <div class="card-body">
+              <a href="Bentley.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Bentley Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Bugatti.html">
+            <img src="images/Bugatti Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 20%; width: 180px;"></a>
+            <div class="card-body">
+              <a href="Bugatti.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Bugatti Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Jaguar.html">
+            <img src="images/Jaguar Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Jaguar.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Jaguar Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Rolls Royce.html">
+            <img src="images/Rolls Royce Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Rolls Royce.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Rolls Royce</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Lexus.html">
+            <img src="images/Lexus Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Lexus.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Lexus Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Mazda.html">
+            <img src="images/Mazda Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 120px;"></a>
+            <div class="card-body">
+              <a href="Mazda.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Mazda Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Citroen.html">
+            <img src="images/Citroen Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 100px;"></a>
+            <div class="card-body">
+              <a href="Citroen.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Citroen Cars</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Hyundai.html">
+            <img src="images/Hyundai Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 50%; width: 150px;"></a>
+            <div class="card-body">
+              <a href="Hyundai.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Hyundai</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Lancer.html">
+            <img src="images/Lancer Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 120px;"></a>
+            <div class="card-body">
+              <a href="Lancer.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Lancer</a>
+            </div>
+          </div>
+          <div id="Anim" class="card card_1 text-dark col-lg-3 col-md-4 col-sm-6 m-1 mt-5" style="background-color: white; width: 15.5rem; border-radius: 10%; text-align: center; min-height: 200px; transition: transform 1.5s;">
+            <a href="Porsche.html">
+            <img src="images/Porsche Logo.jpg" class="card-img-top mt-3" alt="" height="100px" style="border-radius: 10%; width: 80px;"></a>
+            <div class="card-body">
+              <a href="Porsche.html" class="card-title" style="color: black !important; font-weight: 600; font-size: 25px; text-decoration: none;">Porsche</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- الفوتر -->
+      <footer class="text-light p-4" style="background-color: black;">
+        <div class="container-fluid">
+          <div class="row text-center">
+            <!-- طريقة التواصل -->
+            <div class="col-md-4">
+              <h5 class="mt-3">Smart Motors Company</h5>
+              <hr class="border-top my-3">
+              <address>
+                <p>Location : Al-Gharbia , Tanta</p>
+                <p>Telephone : +20 122 554 2244</p>
+                <p>Email : SmartMotors@ics.tanta.edu.eg</p>
+              </address>
+            </div>
+            <!-- اللينكات -->
+            <div class="col-md-4">
+              <h5 class="mt-3">Important Links</h5>
+              <hr class="border-top my-3">
+                <p><a href="">Visit Us</a></p>
+                <p><a href="">Take A Look</a></p>
+                <p><a href="">Your Comfort Is Important</a></p>
+            </div>
+            <!-- براجرافات -->
+            <div class="col-md-4">
+              <h5 class="mt-3">Vision</h5>
+              <hr class="border-top my-3">
+                <p>Serveices For All </p>
+                <p>Provide Best Serveices</p>
+                <p>You Will Be Better Than Before</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <span class="text-center d-block text-light">Copyright &copy; 2023 Smart Motors Company, All Rights.</span>
+        <!-- الايقونات -->
+        <div style="text-align: center;">
+          <a class="mx-1 text-light" style=" font-size: 25px;" href=""><i class="fab fa-facebook-f"></i></a>
+          <a class="mx-1 text-light" style=" font-size: 25px;" href=""><i class="fab fa-twitter"></i></a>
+          <a class="mx-1 text-light" style=" font-size: 25px;" href=""><i class="fab fa-youtube"></i></a>
+          <a class="mx-1 text-light" style=" font-size: 25px;" href=""><i class="fab fa-instagram"></i></a>
+          <a class="mx-1 text-light" style=" font-size: 25px;" href=""><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </footer>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="font-size: 25px; color: black; font-weight: 500;" id="staticBackdropLabel">Admin</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" style="font-size: 18px; color: black; font-weight: 500;" class="form-label">Email</label>
+                  <input type="email" class="form-control" style="border-color: black;" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputName1" style="font-size: 18px; color: black; font-weight: 500;" class="form-label">Password</label>
+                  <input type="password" class="form-control" style="border-color: black;" id="exampleInputName1">
+                </div>
+                <div class="mb-3 form-check">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" style="border-color: black; background-color: black;" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked" style="color: black; font-weight: 600;">Remmember Me</label>
+                  </div>
+                </div>
+              </form>
+              <div class="modal-footer">
+               <form>
+                 <button type="submit" class="btn text-white bg-black" style="font-size: 18px;">Submit</button>
+                  <button type="button" class="btn text-white bg-black" style="font-size: 18px;" data-bs-dismiss="modal">Close</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart Motors</title>
+        <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/fontawesome.min.css">
+        <link href="bootstrap-5.3.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body style="background-color: black;">
+  <!-- الهيدر -->
+   <nav class="navbar navbar-expand-lg bg-black text-white sticky-top">
+    <div class="container-fluid">
+      <!-- اللوجو -->
+      <img src="images/logo.jpg" width="50px" style="margin-top: -8px; margin-left: 20px;">
+      <a class="navbar-brand" href="#" style="padding-right: 20px; font-size: 30px; margin-left: 10px; margin-top: 15px; margin-bottom: 20px; color: white !important; text-shadow: 2px 2px 9px orange; font-weight: bold;">SMART MOTORS</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- اللينكات اللي فالهيدر -->
+      <ul class="navbar-nav mx-auto mb-2 mt-1 mb-lg-0" style="margin-left: 60px !important;">
+        <li class="nav-item mt-24 mb-10 ms-200">
+          <a class="nav-link active text-light" style="color: white; text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" aria-current="page" href="Smart Motors.html">Home</a>
+        </li>
+        <li class="nav-item dropdown mt-6 mb-10 ms-20">
+          <a class="nav-link dropdown-toggle text-white" style="text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" href="Cars.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cars</a>
+          <ul class="dropdown-menu" style="background-color: white;" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item text-black" style="font-size: 25px; text-shadow: 2px 2px 2px rgb(167, 167, 167);" href="New Cars.html">New</a></li>
+            <li><a class="dropdown-item text-black" style="font-size: 25px; text-shadow: 2px 2px 2px rgb(167, 167, 167);" href="Used Cars.html">Used</a></li>
+          </ul>
+        </li>
+        <li class="nav-item mt-6 mb-10 ms-20">
+          <a class="nav-link text-light" style="color: white; text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" href="Services.html">Services</a>
+        </li>
+          <li class="nav-item mt-6 mb-10 ms-20">
+            <a class="nav-link text-light" style="color: white; text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" href="Contact.html">Contact</a>
+          </li>
+          <li class="nav-item mt-6 me-20 mb-13">
+            <a class="nav-link text-light" style="color: white; text-shadow: 2px 2px 2px rgb(92, 92, 92); font-size: 22px;" href="About.html">About</a>
+          </li>
+      </ul>
+      <div class="parent">
+        <div class="desc">
+          <button id="init" class="nav-link text-light">
+            <img class="image" src="images/chat.jpg" alt="pic" width="60px">
+          </button>
+        </div>
+      </div>
+        <!-- السيرش -->
+        <form class="d-flex" style=" margin-right: 30px;">
+          <input class="form-control me-300 my-0" type="search" placeholder="Search" aria-label="Search">
+          <button class="bg-black text-white">
+            <i class="fas fa-search mt-1 mx-2" type="submit" style="font-size: 30px;"></i>
+          </button>
+          <button class="btn btn-outline-light ms-4" style="font-size: 20px; font-weight: bold;" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login</button>
+        </form>
+      </div>
+      </div>
+    </nav>
+    <!-- الشات بوت -->
+    <div class="container-fluid p-0">
+      <div id="test" style="position: fixed; top: 5rem; right: 3rem; display: none;">
+        <div class="child" id="chatbot">
+            <div class="header">
+                <div class="h-child">
+                    <img src="images/chatbot.jpg" alt="avatar" id="avatar">
+                    <div>
+                        <span class="name" style="font-size: 20px;">Chat Bot</span>
+                        <br>
+                        <span style="color: rgb(11, 11, 66); font-size: 17px;font-weight: 500;">online</span>
+                    </div>
+                </div>
+                <div>
+                    <i class="fas fa-times" id="class_x"></i>
+                </div>
+            </div>
+            <div id="chat-box"></div>
+            <div class="footer">
+                <span>Powered By @ Smart Motors</span>
+            </div>
+        </div>
+      </div>
+      <div class="parent">
+        <div class="desc">
+          <button id="init" class="nav-link text-light">
+            <img class="image" src="images/chat.jpg" alt="pic" width="60px">
+          </button>
+        </div>
+      </div>
+    <!-- الصورة والزرار -->
+    <div style=" text-align: center;">
+      <img src="images/Photo.jpg" alt="" style="width: 70%; height: 510px; padding: auto;">
+        <div style="text-align: center; margin-top: -45px; z-index: 1;">
+          <button style="width: 200px; height: 60px; font-size: 20px; font-weight: 500; background-color: rgb(15, 15, 15);">
+            <a href="Smart Motors.html" style=" color: white !important; text-shadow: 1px 1px 1px red; text-decoration: none;">EXPLORE</a>
+          </button>
+        </div>
+      </div>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" style="font-size: 25px; color: black; font-weight: 500;" id="staticBackdropLabel">Admin</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" style="font-size: 18px; color: black; font-weight: 500;" class="form-label">Email</label>
+                  <input type="email" class="form-control" style="border-color: black;" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputName1" style="font-size: 18px; color: black; font-weight: 500;" class="form-label">Password</label>
+                  <input type="password" class="form-control" style="border-color: black;" id="exampleInputName1">
+                </div>
+                <div class="mb-3 form-check">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" style="border-color: black; background-color: black;" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                    <label class="form-check-label" for="flexSwitchCheckChecked" style="color: black; font-weight: 600;">Remmember Me</label>
+                  </div>
+                </div>
+              </form>
+              <div class="modal-footer">
+               <form>
+                 <button type="submit" class="btn text-white bg-black" style="font-size: 18px;">Submit</button>
+                  <button type="button" class="btn text-white bg-black" style="font-size: 18px;" data-bs-dismiss="modal">Close</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+    </body>
+</html>
